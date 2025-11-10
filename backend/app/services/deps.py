@@ -1,8 +1,9 @@
 from fastapi import Depends, HTTPException, status, Request
 from sqlalchemy.orm import Session
-from .database import get_db
-from .config import settings
-from . import models
+
+from backend.app.services.config import settings
+from backend.app.services.database import get_db
+from backend.app import models
 import jwt
 from datetime import datetime, timezone
 

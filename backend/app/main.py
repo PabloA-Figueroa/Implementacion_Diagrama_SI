@@ -1,11 +1,15 @@
 from fastapi import FastAPI, Depends, HTTPException, status, Request
 from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
-from .database import Base, engine, get_db
-from . import models, schemas, crud
-from .deps import get_current_user
-from .security import verify_password
+
+from services import crud
+from services.database import Base, engine, get_db
+from models import models, schemas
+
+from services.deps import get_current_user
 from typing import List
+
+from backend.app.services.security import verify_password
 
 app = FastAPI(title="Auth API (FastAPI + MySQL)")
 

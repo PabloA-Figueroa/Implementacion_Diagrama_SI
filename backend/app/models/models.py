@@ -3,7 +3,8 @@ from sqlalchemy import (
     ForeignKey, LargeBinary, UniqueConstraint, Computed
 )
 from sqlalchemy.orm import relationship
-from .database import Base
+
+from backend.app.services.database import Base
 
 # Enums como strings
 UserEstado = ("pendiente","activo","suspendido","bloqueado","inactivo")
